@@ -3,7 +3,7 @@ export PROJECT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 export SSH_ACCOUNT="dude@192.168.200.3"
 export REMOTE_DIR="/home/dude/backup_$TANGGAL"
 # aktifkan jika ingin backup mailbox pada tanggal tertentu dengan format (mm/dd/yy)
-# export MAILBOX_FIST_DATE="05/01/25"
+# export MAILBOX_FIRST_DATE="05/01/25"
 # export MAILBOX_LAST_DATE="07/01/25"
 
 $PROJECT/scripts/local-clean.sh
