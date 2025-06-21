@@ -33,7 +33,7 @@ for email in $(cat $PROJECT/emails/names.txt); do
       echo -ne "\rmemulai backup mailbox $email bulan $formatted_date\033[K"
 
       zmmailbox -z -m "$email" -t 0 getRestURL "/?fmt=tgz&query=before:$before after:$after" >$PROJECT/emails/mailbox/$email-$formatted_date.tgz || {
-        echo -ne "\r\033[K"
+        echo "❌ Gagal."
         rm -rf $PROJECT/emails/mailbox/$email-$formatted_date.tgz
         offset=$(date -d "$offset + 1 month" +%m/01/%y)
         continue
@@ -42,7 +42,6 @@ for email in $(cat $PROJECT/emails/names.txt); do
 
       offset=$(date -d "$offset + 1 month" +%m/01/%y)
 
-      echo -ne "\r\033[K"
       echo "✅ Selesai."
     done
   fi
