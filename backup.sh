@@ -32,4 +32,12 @@ $PROJECT/scripts/email/mailbox.sh
 echo ""
 rsync -r $PROJECT/scripts $SSH_ACCOUNT:$REMOTE_DIR/scripts
 rsync -r $PROJECT/restore.sh $SSH_ACCOUNT:$REMOTE_DIR/
+
+unset TANGGAL
+unset PROJECT
+unset SSH_ACCOUNT
+unset REMOTE_DIR
+unset MAILBOX_FIST_DATE
+unset MAILBOX_LAST_DATE
+
 echo "Selesai membackup email."
